@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Calculator</title>
+    <link href="./assets/css/styles.css" rel="stylesheet"></link>
+    <link rel="icon" href="./assets/css/calculator.png">
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
+  </head>
+  <body style="background-image:url('./assets/css/background.jpg');">
+    <div class="centered">
+      <h1 style="font-family: Impact, Charcoal, sans-serif;color: white;">Green Calculator Welcomes You</h1>
+    </div>
+    <div class="centered" id="app">
+      <div class="container-area">
+        <h3 class="text-area">{{expression}}</h3>
+        <h1 class="text-area">{{result}}</h1>
+      </div>
+        <button class="button button-op"  @click="percent">%</button>
+        <button class="button button-op" @click="clearEntry">CE</button>
+        <button class="button button-op" @click="clear">C</button>
+        <button class="button button-op" @click="backSpace">&#8656;</button>
+        <button class="button button-op" style="font-size: 12px;" @click="inverse"><sup>1</sup>/x</button>
+        <button class="button button-op" style="font-size: 14px;" @click="square">X<sup>2</sup></button>
+        <button class="button button-op" @click="squareRoot">&#x221A;</button>
+        <button class="button button-op" @click="binaryOperation('÷')">÷</button>
+        <button class="button" @click="addNumber(7)">7</button>
+        <button class="button" @click="addNumber(8)">8</button>
+        <button class="button" @click="addNumber(9)">9</button>
+        <button class="button button-op" @click="binaryOperation('*')" value="*">&#215;</button>
+        <button class="button"  @click="addNumber(4)">4</button>
+        <button class="button"  @click="addNumber(5)">5</button>
+        <button class="button"  @click="addNumber(6)">6</button>
+        <button class="button button-op" @click="binaryOperation('-')" value="-">-</button>
+        <button class="button"  @click="addNumber(1)">1</button>
+        <button class="button"  @click="addNumber(2)">2</button>
+        <button class="button"  @click="addNumber(3)">3</button>
+        <button class="button button-op" @click="binaryOperation('+')" value="+">+</button>
+        <button class="button button-op" style="font-size: 12px;" @click="invertSign"><sup>+</sup>/ -</button>
+        <button class="button" @click="addNumber(0)" value="0">0</button>
+        <button class="button" @click="addPoint">.</button>
+        <button class="button button-op" @click="equals(true)">=</button>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./assets/js/main.js" type="text/javascript"></script>
+    <!-- Mount App -->
+    <script>
+      const mountedApp = app.mount('#app')
+    </script>
+  </body>
+</html>
